@@ -1,43 +1,55 @@
-
-// document.addEventListener("DOMContentLoaded", function() {
-//     var timeEl = document.getElementById('time-el');
-//     var secondsLeft = 75;
-
+//make it so when it hits 0 seocnds it links to leaderbored 
+//make it so whenyou input somthing into the leaderbored it saves it 
+//make it so score is time + score (10 points for each right answer)
 
 
-//     function updateTimer() {
-//       timeEl.textContent = secondsLeft;
-//       if (secondsLeft === 0) {
-//         clearInterval(timerInterval);
-//         // Call a function or perform an action when the timer reaches 0
-//         window.location.href = 'leaderbored.html'
-//       }else{
-//         secondsLeft--;
-//       }
-//     }
+
+
+
+function scoreBrd (){
+  var score= document.getElementById('fin-score');
+  score.textContent = secondsLeft;
+
+}
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var timeEl = document.getElementById('time-el');
+    var secondsLeft = 75;
+
+
+    //come back to need to make it so timer stop at 0 and negitives. 
+    function updateTimer() {
+      timeEl.textContent = secondsLeft;
+      if (secondsLeft === 0) {
+        clearInterval(timerInterval);
+        // Call a function or perform an action when the timer reaches 0
+        window.location.href = 'leaderbored.html'
+      }else{
+        secondsLeft--;
+      }
+    }
   
-//     function sendMessage(message) {
-//       console.log(message);
-//       // You can replace this with any action you want to perform when the timer reaches 0
-//     }
+    function sendMessage(message) {
+      console.log(message);
+      // You can replace this with any action you want to perform when the timer reaches 0
+    }
   
-//     var timerInterval;
+    var timerInterval;
   
-//     // Start the timer when the page loads
-//     startTimer(); 
+    // Start the timer when the page loads
+    startTimer(); 
     
-//     // function startTimer(){
-
-//     // }
-
-
-
-
-//     function startTimer() {
-//       // Call the updateTimer function every second/
-//       timerInterval = setInterval(updateTimer, 1000);
-//     }
-//   });
+   
+    function startTimer() {
+      // Call the updateTimer function every second/
+      timerInterval = setInterval(updateTimer, 1000);
+    }
+  });
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -73,17 +85,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-
-
-
-
-
-
-
-
-
-
-
   const wrongAnswerButtons = document.querySelectorAll('#wrong-button');
   const timeElements = document.querySelectorAll('.time'); // Use a class instead of an invalid ID
   
@@ -100,25 +101,25 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
   
-  // Attach the click event listener to each wrong-answer button
+  
   wrongAnswerButtons.forEach(button => {
     button.addEventListener('click', displayContent);
   });
 
-  // const wrongAnswer = document.querySelectorAll('#wrong-button')
-  // const content = document.querySelectorAll('#--time')
-  // function displayContent(){
-  //   if(content.style.display === 'none'){
-  //     content.style.display = 'block';
-  //     setTimeout(function(){
-  //       content.style.display = 'none';
-  //     },2000);
-  //   }else{
-  //     content.style.display = 'none';
-  //   }
-  // }
+  const wrongAnswer = document.querySelectorAll('#wrong-button')
+  const content = document.querySelectorAll('#--time')
+  function displayContent(){
+    if(content.style.display === 'none'){
+      content.style.display = 'block';
+      setTimeout(function(){
+        content.style.display = 'none';
+      },2000);
+    }else{
+      content.style.display = 'none';
+    }
+  }
   
-  wrongAnswerButtons.forEach(button => {
+  wrongAnswer.forEach(button => {
     button.addEventListener('click', displayContent);
 });
 
@@ -148,3 +149,63 @@ correctBtn.addEventListener('click', increaseScore);
 
 // Initialize the score display when the page loads
 updateScoreDisplay();
+
+document.addEventListener("DOMContentLoaded", function() {
+  var timeEl = document.getElementById('time-el');
+  var secondsLeft = localStorage.getItem('secondsLeft') || 75;
+
+  function updateTimer() {
+      timeEl.textContent = secondsLeft;
+      if (secondsLeft <= 0) {
+          clearInterval(timerInterval);
+          // Call a function or perform an action when the timer reaches 0
+          window.location.href = 'leaderboard.html';
+      } else {
+          secondsLeft--;
+          // Save the updated secondsLeft value in Local Storage
+          localStorage.setItem('secondsLeft', secondsLeft);
+      }
+  }
+
+  function subtractTime(seconds) {
+    secondsLeft -= seconds;
+    localStorage.setItem('secondsLeft', secondsLeft);
+    updateTimer();
+  }
+
+  var timerInterval;
+
+  // Start the timer when the page loads
+  startTimer();
+
+  function startTimer() {
+      updateTimer();
+      timerInterval = setInterval(updateTimer, 1000);
+  }
+
+  const wrongAnswerButtons = document.querySelectorAll('#wrong-button');
+
+  function handleWrongButtonClick() {
+    subtractTime(15); // Subtract 15 seconds
+    displayContent();
+  }
+
+  function displayContent() {
+    timeElements.forEach(content => {
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        setTimeout(function () {
+          content.style.display = 'none';
+        }, 2000);
+      } else {
+        content.style.display = 'none';
+      }
+    });
+  }
+  
+  // Attach the click event listener to each wrong-answer button
+  wrongAnswerButtons.forEach(button => {
+    button.addEventListener('click', handleWrongButtonClick);
+  });
+});
+
