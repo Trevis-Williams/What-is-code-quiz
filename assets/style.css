@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    width: 14%;
+    height: 50px;
+    margin: 0;
+    padding-left: 30px;
+}
+header a {
+    text-decoration: none;
+    color: blue;
+    width: 14%;
+}
+header a:hover {
+    color: rgb(40, 40, 182);
+}
+header h1 {
+    width: 100%;
+}
+.card1 {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+ .card1-text h1 {
+    font-size: 60px;
+}
+.card1-text p {
+    font-size: 30px;
+    width: 100%;
+}  
+#button-start {
+    text-align: center;
+    width: 15%;
+    border-radius: 15px;
+    background-color: blue;
+    font-size: 32px;
+    color: aliceblue;
+    height: 60px;
+}
+#button-start:hover {
+    background-color: rgb(40, 40, 182);
+}
+.timer {
+    text-align: right;
+    height: 50px;
+}
+.card2 ol {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: left;
+}
+.list {
+    text-align: left;
+}
+.q-button {
+    background-color: blue;
+    margin: 20px;
+    border-radius: 15px;
+    height: 75px;
+    width: 350px;
+    padding-left: 30px;
+    justify-content: left;
+    
+}
+.q-button:hover {
+    background-color: rgb(40, 40, 182);
+}
+.card2 ol li {
+    border-radius: 5px;
+    width: 100%;
+    text-align: left;
+    margin: 10px;
+    color: aliceblue;
+    font-size: 25px;
+}
+.card2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 80%;
+    padding-left: 200px;
+}
+.card2 h1 {
+    font-size: 60px;
+    text-align: left;
+}
+footer  {
+    color: rgb(238, 11, 11);
+    border-style: solid none none none;
+    width: 100%;
+    display: flex;
+    padding-left: 30px;
+    border-color: black;
+}
+
+.leaderbored {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.fin-score {
+    font-size: 35px;
+    text-align: center;
+}
+.form-initials {
+display: flex;
+text-align: center;
+align-items: center;
+justify-content: center;
+}
+.initials{
+    font-size: 25px;
+    margin: 10px;
+}
+.-time {
+    display: flex;
+    margin: 10px;
+    font-size: 27px;
+    padding-left: 225px;
+}
+.-time h2 {
+    color: red;
+    font-size: 25px;
+    margin-left: 20px;
+    font-size: 25px;
+    padding-left: 120px;
+}
