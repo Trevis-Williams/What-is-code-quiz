@@ -6,23 +6,29 @@
     <link rel="stylesheet" href="assets\style2.css">
     <title>What is code?</title>
 </head>
-<body>
 
-    <main>
-        <section class="leaderbored">
-        <h1>All done!</h1>
-        <p class="fin-score"></p>
-        <section class="form-initials">
-        <p class="initials">Enter initials:</p>
-        <form action="">
-            <input type="text" value="Enter initials" class="form">
-            <input type="button" value="Submit!" class="button">
-        </form>
-        </section>
-        </section>
-    </main>
+    <body>
+    <form>
+      <label for="fname" class="score">Score place holder</label><br>
+      <input type="text" id="fname" name="fname"><br>
+      <input class="button" type="button" value="Submit" onclick="addToOL()">
+    </form>
+    <ul id="nameList">
+        <li></li>
+    </ul>
+    </body>
 
 
-    <script src="assets\script.js"></script>
-</body>
+
+
+    <script>
+        function addToOL() {
+            var firstName = document.getElementById("fname").value;
+            var ol = document.getElementById("nameList");
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(firstName));
+            ol.appendChild(li);
+            document.getElementById("fname").value = ""; // Clear the input field
+        }
+        </script>
 </html>
