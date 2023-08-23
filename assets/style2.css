@@ -1,32 +1,20 @@
 body {
-    width: 100%;
-    display: inline-flex;
-    justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
-    padding-top: 250px;
-}
-
-form {
-    text-align: center;
 }
 
 .score {
-    font-size: 25px;
+    font-size: 45px;
 }
 .button {
     width: 100px;
     margin-top: 20px;
     height: 30px;
 }
-ol{
-    display: inline;
-    list-style: none;
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
 }
-
-#nameList {
-    margin-top: 20px;
-    list-style-type: decimal;
-  }
 
 li {
     text-decoration: none;
@@ -39,5 +27,40 @@ li {
     text-align: center;
     align-content: center;
     margin: 10PX;
+    font-size: 20px;
 }
 
+.inline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+h1:hover {
+    color: rgb(82, 82, 218);
+}
+.all-done {
+    font-size: 50px;
+}
+a {
+    background-color: white;
+    text-decoration: none;
+}
+.plain-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    outline: none;
+    display: inline; /* Keep the button display inline */
+    margin-left: 40px;
+}
+
+h1{
+    font-size: 40px;
+}

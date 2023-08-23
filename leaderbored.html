@@ -6,29 +6,77 @@
     <link rel="stylesheet" href="assets\style2.css">
     <title>What is code?</title>
 </head>
+<body>
+    <a href="C:\Users\Rst14\All-school-projects\What-is-code-quiz\index.html" class="back">
+        <button type="button" id="back-start" class="plain-button">
+            <h1>Take quiz again?</h1>
+        </button>
+    </a>
 
-    <body>
-    <form>
-      <label for="fname" class="score">Score place holder</label><br>
-      <input type="text" id="fname" name="fname"><br>
-      <input class="button" type="button" value="Submit" onclick="addToOL()">
-    </form>
-    <ul id="nameList">
-        <li></li>
-    </ul>
-    </body>
+    <section class="inline">
+        <header>
+            <p class="all-done">All done!!!</p>
+            <p class="score"></p>
+        </header>
 
+        <main>
+            <form>
+                <input type="text" id="fname" name="fname"><br>
+                <input class="button" type="button" value="Submit" onclick="addToOL()">
+            </form>
+            <ul id="nameList">
+                <li></li>
+            </ul>
+        </main>
+    </section>
+
+    <script src="assets\script2.js"></script>
+</body>
 
 
 
     <script>
         function addToOL() {
-            var firstName = document.getElementById("fname").value;
-            var ol = document.getElementById("nameList");
-            var li = document.createElement("li");
-            li.appendChild(document.createTextNode(firstName));
-            ol.appendChild(li);
-            document.getElementById("fname").value = ""; // Clear the input field
+    var firstName = document.getElementById("fname").value;
+    var ol = document.getElementById("nameList");
+    var li = document.createElement("li");
+    
+    var defaultText = totalScore; 
+    li.appendChild(document.createTextNode(defaultText)); // Append default text
+    
+    li.appendChild(document.createTextNode(firstName));
+    ol.appendChild(li);
+    document.getElementById("fname").value = ""; // Clear the input field
+
+    var allItems = JSON.parse(localStorage.getItem("listItems")) || [];
+
+    allItems.push(firstName);
+    localStorage.setItem("listItems", JSON.stringify(allItems));
+}
+
+    window.addEventListener("load", function() {
+    var ol = document.getElementById("nameList");
+    var allItems = JSON.parse(localStorage.getItem("listItems")) || [];
+    
+    allItems.forEach(function(item) {
+        var li = document.createElement("li");
+        var defaultText = totalScore; 
+        li.appendChild(document.createTextNode(defaultText));
+        li.appendChild(document.createTextNode(item));
+        ol.appendChild(li);
+    });
+});
+
+        var retrievedTime = localStorage.getItem("secondsLeft");
+        var retrievedScore = localStorage.getItem("score");
+        var scoreElement = document.querySelector(".score");
+        var numericScore = parseInt(retrievedScore, 10) || 0;
+        var numericTime = parseFloat(retrievedTime) || 0;
+        var totalScore = numericScore + numericTime;
+        if (retrievedScore !== null) {
+            scoreElement.textContent = "Total Score: " + totalScore;
+            } else {
+                scoreElement.textContent = "No score available.";
         }
         </script>
 </html>

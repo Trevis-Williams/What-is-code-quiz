@@ -19,6 +19,7 @@ header a:hover {
 }
 header h1 {
     width: 100%;
+    font-size: 40px;
 }
 .card1 {
     display: inline-flex;
