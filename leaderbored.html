@@ -78,5 +78,10 @@
             } else {
                 scoreElement.textContent = "No score available.";
         }
+
+        document.getElementById("back-start").addEventListener("click", function() {
+    localStorage.removeItem("time-left"); // Remove the "secondsLeft" key from local storage
+    localStorage.removeItem("score");
+})
         </script>
 </html>
