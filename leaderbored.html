@@ -36,52 +36,115 @@
 
 
     <script>
-        function addToOL() {
+//         function addToOL() {
+//     var firstName = document.getElementById("fname").value;
+//     var ol = document.getElementById("nameList");
+//     var li = document.createElement("li");
+    
+//     // var defaultText = totalScore; 
+//     // li.appendChild(document.createTextNode(defaultText)); // Append default text
+    
+//     li.appendChild(document.createTextNode(firstName));
+//     ol.appendChild(li);
+//     document.getElementById("fname").value = ""; // Clear the input field
+
+//     var allItems = JSON.parse(localStorage.getItem("listItems")) || [];
+
+//     allItems.push(firstName);
+//     localStorage.setItem("listItems", JSON.stringify(allItems));
+// }
+
+//     window.addEventListener("load", function() {
+//     var ol = document.getElementById("nameList");
+//     var allItems = JSON.parse(localStorage.getItem("listItems")) || [];
+    
+//     allItems.forEach(function(item) {
+//         var li = document.createElement("li");
+//         var defaultText = totalScore; 
+
+//         li.appendChild(document.createTextNode(defaultText));
+//         var defaultText = totalScore; 
+//         li.appendChild(document.createTextNode(defaultText));
+//         li.appendChild(document.createTextNode(item));
+//         ol.appendChild(li);
+//     });
+// });
+
+// window.addEventListener("load", function() {
+//     var retrievedTime = localStorage.getItem("time-left");
+//     var retrievedScore = localStorage.getItem("score");
+//     var numericScore = parseInt(retrievedScore, 10) || 0;
+//     var numericTime = parseFloat(retrievedTime) || 0;
+//     var totalScore = numericScore + numericTime;
+//     var scoreElement = document.querySelector(".score");
+//     if (retrievedScore !== null) {
+//         scoreElement.textContent = "Total Score: " + totalScore;
+//     } else {
+//         scoreElement.textContent = "No score available.";
+//     }
+    
+//     document.getElementById("back-start").addEventListener("click", function() {
+//         localStorage.clear();
+//     });
+// });
+
+
+
+function addToOL() {
     var firstName = document.getElementById("fname").value;
     var ol = document.getElementById("nameList");
     var li = document.createElement("li");
     
-    var defaultText = totalScore; 
-    li.appendChild(document.createTextNode(defaultText)); // Append default text
-    
-    li.appendChild(document.createTextNode(firstName));
+    var retrievedTime = localStorage.getItem("time-left");
+    var retrievedScore = localStorage.getItem("score");
+    var numericScore = parseInt(retrievedScore, 10) || 0;
+    var numericTime = parseFloat(retrievedTime) || 0;
+    var totalScore = numericScore + numericTime;
+
+    var defaultText = "Total Score: " + totalScore + " - " + firstName;
+    li.appendChild(document.createTextNode(defaultText));
     ol.appendChild(li);
+    
     document.getElementById("fname").value = ""; // Clear the input field
 
     var allItems = JSON.parse(localStorage.getItem("listItems")) || [];
-
     allItems.push(firstName);
     localStorage.setItem("listItems", JSON.stringify(allItems));
 }
 
-    window.addEventListener("load", function() {
+window.addEventListener("load", function() {
     var ol = document.getElementById("nameList");
     var allItems = JSON.parse(localStorage.getItem("listItems")) || [];
     
     allItems.forEach(function(item) {
         var li = document.createElement("li");
-        var defaultText = totalScore; 
-        li.appendChild(document.createTextNode(defaultText));
-        li.appendChild(document.createTextNode(item));
-        ol.appendChild(li);
-    });
-});
-
-        var retrievedTime = localStorage.getItem("secondsLeft");
+        var retrievedTime = localStorage.getItem("time-left");
         var retrievedScore = localStorage.getItem("score");
-        var scoreElement = document.querySelector(".score");
         var numericScore = parseInt(retrievedScore, 10) || 0;
         var numericTime = parseFloat(retrievedTime) || 0;
         var totalScore = numericScore + numericTime;
-        if (retrievedScore !== null) {
-            scoreElement.textContent = "Total Score: " + totalScore;
-            } else {
-                scoreElement.textContent = "No score available.";
-        }
 
-        document.getElementById("back-start").addEventListener("click", function() {
-    localStorage.removeItem("time-left"); // Remove the "secondsLeft" key from local storage
-    localStorage.removeItem("score");
-})
+        var defaultText = "Total Score: " + totalScore + " - " + item;
+        li.appendChild(document.createTextNode(defaultText));
+        ol.appendChild(li);
+    });
+    
+    var retrievedTime = localStorage.getItem("time-left");
+    var retrievedScore = localStorage.getItem("score");
+    var numericScore = parseInt(retrievedScore, 10) || 0;
+    var numericTime = parseFloat(retrievedTime) || 0;
+    var totalScore = numericScore + numericTime;
+    var scoreElement = document.querySelector(".score");
+    if (retrievedScore !== null) {
+        scoreElement.textContent = "Total Score: " + totalScore;
+    } else {
+        scoreElement.textContent = "No score available.";
+    }
+    
+    document.getElementById("back-start").addEventListener("click", function() {
+        localStorage.clear();
+    });
+});
+
         </script>
 </html>
