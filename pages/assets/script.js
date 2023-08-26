@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (secondsLeft <= 0) {
             clearInterval(timerInterval);
             // Call a function or perform an action when the timer reaches 0
-            window.location.href = 'C:\\Users\\Rst14\\All-school-projects\\What-is-code-quiz\\leaderbored.html';
+            window.location.href = 'leaderbored.html';
 
         } else {
             secondsLeft--;

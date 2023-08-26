@@ -13,7 +13,7 @@ This is a simple quiz about coding! There is a sccorebored and a points system. 
 ![Screenshot 2023-08-25 115053](https://github.com/Trevis-Williams/What-is-code-quiz/assets/135195221/06863477-11d1-47b5-b197-0b5ef15e6ae1)
 
 ## Deployed page
-
+  https://trevis-williams.github.io/What-is-code-quiz/
 
   ## Help
   recived help from 
