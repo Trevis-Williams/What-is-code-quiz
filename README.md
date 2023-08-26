@@ -16,5 +16,6 @@ This is a simple quiz about coding! There is a sccorebored and a points system. 
   https://trevis-williams.github.io/What-is-code-quiz/
 
   ## Help
-  recived help from 
+  recived help from Joem Casusi
+
 
