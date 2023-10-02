@@ -3,6 +3,15 @@ body {
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: lightslategray;
+    
+}
+
+.aware-text {
+    color: red; /* You can choose your desired color here */
+    font-size: 70px;
+    font-style: italic;
+    font-weight: 800;
+    text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324; 
 }
 
 
@@ -54,6 +63,7 @@ header a:hover {
     font-size: 32px;
     color: aliceblue;
     height: 60px;
+    margin-left: 800px;
 }
 #button-start:hover {
     background-color: rgb(40, 40, 182);
@@ -61,6 +71,10 @@ header a:hover {
 .timer {
     text-align: right;
     height: 50px;
+}
+
+.time{
+    font-size: 30px;
 }
 .card2 ol {
     display: inline-flex;
@@ -105,10 +119,11 @@ header a:hover {
 footer  {
     color: rgb(238, 11, 11);
     border-style: solid none none none;
-    width: 100%;
+    width: 80%;
     display: flex;
-    padding-left: 30px;
+   margin-left: 120px;
     border-color: black;
+    font-size: 50px;
 }
 
 
@@ -140,8 +155,8 @@ justify-content: center;
 }
 .-time h2 {
     color: red;
-    font-size: 25px;
-    margin-left: 20px;
-    font-size: 25px;
-    padding-left: 120px;
+    font-size: 100px;
+    margin-left: 0px;
+    font-size: 45px;
+    padding-left: 20px;
 }

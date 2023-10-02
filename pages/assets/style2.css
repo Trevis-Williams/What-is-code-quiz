@@ -1,5 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: lightslategray;
+    color: white;
 }
 
 .score {
@@ -19,11 +21,9 @@ ul{
 li {
     text-decoration: none;
     list-style: none;
-    background-color: blue;
     width: 200px;
     height: 50px;
     border-radius: 10px;
-    color: aliceblue;
     text-align: center;
     align-content: center;
     margin: 10PX;
@@ -39,14 +39,11 @@ li {
 }
 
 
-h1:hover {
-    color: rgb(82, 82, 218);
-}
+
 .all-done {
-    font-size: 50px;
+    font-size: 80px;
 }
 a {
-    background-color: white;
     text-decoration: none;
 }
 .plain-button {
@@ -62,5 +59,12 @@ a {
 }
 
 h1{
-    font-size: 40px;
+    font-size: 60px;
+    padding-left: 40px;
+    color: white;
+    text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324; 
+}
+
+.back:hover{
+    background-color: blue;
 }
