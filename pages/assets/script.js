@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-var words = ['What is code?', 'Test your knowlage!',],
+var words = ['What is code?', 'Test your knowledge!',],
     part,
     i = 0,
     offset = 0,
