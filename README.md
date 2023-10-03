@@ -4,7 +4,7 @@
 This is a simple quiz about coding! There is a sccorebored and a points system. The faster you complete the quiz and the more acrutaly the better you score will be!!!
 
 ## screenshots
-![nw code quiz screen shot finale](https://github.com/Trevis-Williams/What-is-code-quiz/assets/135195221/85a29fb6-dbba-415b-af4b-e65427ab377b)
+![what codse](https://github.com/Trevis-Williams/Trevis-portfolio-Website/assets/135195221/e4ceff32-390f-4378-963f-9c9af345be54)
 ## Deployed page
   https://trevis-williams.github.io/What-is-code-quiz/
 
